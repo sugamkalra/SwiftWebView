@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import WebKit
 
-class ViewController: UIViewController,UIWebViewDelegate {
+class ViewController: UIViewController {
 
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    @IBOutlet weak var webView: UIWebView!
+    @IBOutlet weak var webView: WKWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +36,7 @@ class ViewController: UIViewController,UIWebViewDelegate {
     {
         let url = URL(string: "https://appirio.com/")!
         let request = URLRequest(url: url)
-        webView.loadRequest(request)
+        webView.load(request)
     }
     
     
