@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UIWebViewDelegate {
 
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
