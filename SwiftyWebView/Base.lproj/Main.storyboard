@@ -21,27 +21,7 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dJs-kE-tg8">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="X31-OK-PBP"/>
-                                </connections>
-                            </webView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Khv-C9-fTf">
-                                <rect key="frame" x="171" y="317" width="37" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                            </activityIndicatorView>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="dJs-kE-tg8" secondAttribute="trailing" id="UBo-08-Z7k"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dJs-kE-tg8" secondAttribute="bottom" id="iVh-VO-CYn"/>
-                            <constraint firstItem="dJs-kE-tg8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="oou-XD-sWo"/>
-                            <constraint firstItem="dJs-kE-tg8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-64" id="pJF-lh-Sqn"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="S6k-7m-004">
                         <leftBarButtonItems>
@@ -69,10 +49,6 @@
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
-                    <connections>
-                        <outlet property="activityIndicator" destination="Khv-C9-fTf" id="Iax-34-NDm"/>
-                        <outlet property="webView" destination="dJs-kE-tg8" id="H8o-AX-FDT"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

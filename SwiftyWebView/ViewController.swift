@@ -9,15 +9,18 @@
 import UIKit
 import WebKit
 
-class ViewController: UIViewController,UIWebViewDelegate {
-
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+class ViewController: UIViewController,WKNavigationDelegate {
     
-    @IBOutlet weak var webView: WKWebView!
+    var wkWebView: WKWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+
+        
+        self.wkWebView = WKWebView(frame: self.view.frame)
+        
+        self.view.addSubview(self.wkWebView)
         
         // Method call to load URL in WebView
         loadURL()
@@ -25,7 +28,7 @@ class ViewController: UIViewController,UIWebViewDelegate {
     
     
     /**
-     Method to load URL in WebView
+     Method to load URL in WKWebView
      
      @param nil
      
@@ -36,11 +39,11 @@ class ViewController: UIViewController,UIWebViewDelegate {
     {
         let url = URL(string: "https://appirio.com/")!
         let request = URLRequest(url: url)
-        webView.load(request)
+        wkWebView.load(request)
     }
     
     
-    // MARK: UIWebView Functionality Methods
+    // MARK: WKWebView Functionality Methods
     
     /**
      Method for WebView to go back to previous page
@@ -51,7 +54,10 @@ class ViewController: UIViewController,UIWebViewDelegate {
      */
     @IBAction func handleGoBack(_ sender: UIBarButtonItem)
     {
-        webView.goBack()
+        if wkWebView.canGoBack
+        {
+            wkWebView.goBack()
+        }
     }
     
     
@@ -64,7 +70,11 @@ class ViewController: UIViewController,UIWebViewDelegate {
      */
     @IBAction func handleGoForward(_ sender: UIBarButtonItem)
     {
-        webView.goForward()
+        if wkWebView.canGoForward
+        {
+            wkWebView.goForward()
+        }
+        
     }
     
     
@@ -77,7 +87,7 @@ class ViewController: UIViewController,UIWebViewDelegate {
      */
     @IBAction func handleRefresh(_ sender: UIBarButtonItem)
     {
-        webView.reload()
+        wkWebView.reload()
     }
     
     
@@ -90,35 +100,7 @@ class ViewController: UIViewController,UIWebViewDelegate {
      */
     @IBAction func handleStop(_ sender: UIBarButtonItem)
     {
-        webView.stopLoading()
-    }
-    
-    
-    // MARK: UIWebView Delegate Methods
-    
-    /**
-     UIWebView Delegate Method - When webview starts load
-     
-     @param webView : UIWebView
-     
-     @return nil
-     */
-    func webViewDidStartLoad(_ webView: UIWebView)
-    {
-        activityIndicator.startAnimating()
-    }
-    
-    
-    /**
-     UIWebView Delegate Method - When webview finishes load
-     
-     @param webView : UIWebView
-     
-     @return nil
-     */
-    func webViewDidFinishLoad(_ webView: UIWebView)
-    {
-        activityIndicator.stopAnimating()
+        wkWebView.stopLoading()
     }
     
     override func didReceiveMemoryWarning() {

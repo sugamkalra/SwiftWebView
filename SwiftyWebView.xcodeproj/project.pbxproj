@@ -299,6 +299,7 @@
 				15C6B7931EB898200028F655 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
