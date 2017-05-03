@@ -9,17 +9,15 @@
 import UIKit
 import WebKit
 
-class ViewController: UIViewController,WKNavigationDelegate {
+class ViewController: UIViewController {
     
     var wkWebView: WKWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-
         
         self.wkWebView = WKWebView(frame: self.view.frame)
-        
         self.view.addSubview(self.wkWebView)
         
         // Method call to load URL in WebView
@@ -102,6 +100,8 @@ class ViewController: UIViewController,WKNavigationDelegate {
     {
         wkWebView.stopLoading()
     }
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
